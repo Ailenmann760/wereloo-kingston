@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wereloo Kingston - Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #111111;
+            --section-bg: rgba(30, 30, 30, 0.8);
+            --green-accent: #00A878;
+            --green-light: #64C5A1;
+            --light-text: #E5E5E5;
+            --highlight-text: #FFFFFF;
+            --main-font: 'Playfair Display', serif;
+            --body-font: 'Montserrat', sans-serif;
+            --link-color: #00E676;
+            --border-radius: 10px;
+        }
+
+        body {
+            background: linear-gradient(135deg, #00A878, #2A9D8F, #4A7A6E);
+            background-size: 400% 400%;
+            animation: gradient-animation 15s ease infinite;
+            color: var(--light-text);
+            font-family: var(--body-font);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .section {
+            padding: 40px;
+            margin-bottom: 20px;
+            background-color: var(--section-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .hero-section {
+            text-align: center;
+            background-color: transparent;
+            padding: 0;
+            box-shadow: none;
+            margin-bottom: 40px;
+        }
+
+        .hero-section img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--green-accent);
+            box-shadow: 0 0 20px var(--green-accent);
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 20px var(--green-accent); }
+            to { box-shadow: 0 0 30px var(--green-light); }
+        }
+
+        .hero-section h1 {
+            font-family: var(--main-font);
+            font-size: 3rem;
+            margin: 20px 0 5px;
+            color: var(--highlight-text);
+        }
+
+        .hero-section p {
+            font-family: var(--body-font);
+            font-weight: 300;
+            font-size: 1.2rem;
+            color: var(--light-text);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--green-accent);
+            color: var(--highlight-text);
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 168, 120, 0.4);
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: var(--green-light);
+            box-shadow: 0 6px 20px rgba(100, 197, 161, 0.6);
+            transform: translateY(-3px);
+        }
+
+        .section-header {
+            font-family: var(--main-font);
+            font-size: 2.5rem;
+            color: var(--highlight-text);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-header::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background-color: var(--green-accent);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--green-accent);
+            font-size: 2em;
+            line-height: 0;
+            margin-right: 15px;
+            position: relative;
+            top: 6px;
+        }
+
+        li strong {
+            display: block;
+            font-size: 1.2rem;
+            color: var(--highlight-text);
+        }
+
+        li p {
+            margin: 5px 0 0 0;
+            font-weight: 300;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--green-light);
+            text-decoration: underline;
+        }
+
+        .article-card {
+            background-color: var(--section-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .article-card img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+        }
+
+        .article-card h4 {
+            margin: 0;
+            font-size: 1.4rem;
+            color: var(--highlight-text);
+        }
+
+        .article-card p {
+            margin: 5px 0 0 0;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        .contact-info strong {
+            color: var(--highlight-text);
+            display: block;
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+
+        .contact-info a {
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="hero-section">
+            <img src="https://i.imgur.com/your-image-url.jpg" alt="Wereloo Kingston Profile Picture">
+            <h1>WERELOO KINGSTON</h1>
+            <p>Writer, Public Speaker, and Consultant in Abuja, Nigeria</p>
+            <a href="#" class="btn">View my portfolio</a>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">About Me</h2>
+            <p>I'm Kingston Wereloo Leyiibe, an Environmental Sustainability Specialist, Climate Educator, and the Founder of Greenable Initiative Africa, a youth-led NGO driving grassroots climate action and education across Nigeria.</p>
+            <p>With a background in Environmental Biotechnology and over three years of hands-on experience, I’ve led community-centered projects focused on environmental awareness, waste recovery, biogas production, and sustainability training. My work bridges science, policy, and public engagement, turning complex climate issues into practical, people-driven solutions.</p>
+            <p>I currently serve as the Sustainability Manager at Greenable Initiative Africa. Through this role, I lead strategic initiatives that promote waste recovery, climate literacy, clean energy awareness, and sustainable development in underserved communities. I'm also an active advocate for youth inclusion in climate policy and have been selected for programs such as Youth4Climate, the UN SDSN National Green Campaign, and the World Bank Youth Summit.</p>
+            <p>I also write and speak on environmental topics, including climate change, circular economy, and Environmental, Social and Governance (ESG) principles, simplifying complex ideas to spark public interest and inspire action.</p>
+            <p>My mission is to empower individuals and institutions to embed sustainability in their choices, policies, and futures.</p>
+            <p>So, How can I help?</p>
+            <p>Let's Connect and build something green, smart, and meaningful together.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">Experience</h2>
+            <ul>
+                <li>
+                    <strong>Sustainability Manager, Greenable Initiative Africa</strong>
+                    <p>Founder-led, grassroots NGO driving environmental awareness and climate education across Nigeria.</p>
+                </li>
+                <li>
+                    <strong>Environmental Evaluation Officer, CEFPACS Consulting Ltd</strong>
+                    <p>Led sustainability training, project audits, stakeholder engagement, and waste reduction programs.</p>
+                </li>
+                <li>
+                    <strong>Youth Delegate - Youth4Climate, UN SDSN Green Campaign, IRIS Project, World Bank Youth Summit</strong>
+                    <p>Represented Nigeria in international climate forums, contributing youth perspectives on policy and local solutions</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">Key Skills</h2>
+            <ul>
+                <li>Climate storytelling & sustainability writing</li>
+                <li>ESG content development</li>
+                <li>Environmental education & curriculum design</li>
+                <li>Policy engagement & SDG integration</li>
+                <li>Public speaking & workshop facilitation</li>
+                <li>Youth empowerment in climate spaces</li>
+                <li>Social media climate communication</li>
+                <li>Grant writing and NGO program development</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-header">Speaking & Training</h2>
+            <ul>
+                <li>Workshops, keynote talks, and youth panels on climate justice, waste management, and sustainability leadership</li>
+                <li>Climate storytelling, public speaking, and SDG-based education sessions</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-header">Environmental Writing</h2>
+            <ul>
+                <li>Articles, op-eds, newsletters, blogs, reports, and ESG content</li>
+                <li>Ghostwriting and thought leadership pieces for climate professionals</li>
+                <li>Content for sustainability-focused websites, NGOs, and institutions</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">Climate Consulting</h2>
+            <ul>
+                <li>Climate Consulting</li>
+                <li>Climate literacy programs for schools and organizations</li>
+                <li>Environmental impact campaign design and delivery</li>
+                <li>Stakeholder engagement and advocacy strategy</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-header">Recognitions & Selections</h2>
+            <ul>
+                <li>Ambassador, Sustainable Green Environment (SGE)</li>
+                <li>Youth Delegate, UN SDSN National Green Campaign</li>
+                <li>Nigerian Representative, 195 in 365 Climate Policy Initiative</li>
+                <li>Participant, World Bank Youth Summit (Virtual)</li>
+                <li>Participant, Youth4Climate Initiative</li>
+                <li>Selected Speaker at Environmental Youth Forums (Local & Regional)</li>
+                <li>Facilitator for Green Spark Bootcamp by Eco Effort and Insight.</li>
+                <li>Participant for the UN Watch party in Nigeria.</li>
+                <li>Contributor to the Circular Economy Forum 2026, in Dubai/Abu Dhabi</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-header">Certifications</h2>
+            <ul>
+                <li><strong>UNITAR & UN CC:Learn</strong> - Climate Change & Gender, Children and Climate, Climate Justice and Becoming a climate Champion</li>
+                <li><strong>NEBOSH IGC & ISO 14001/45001</strong> - Environmental and Occupational Safety</li>
+                <li><strong>Environmental Impact Assessment & Project Management</strong> - ICBMD</li>
+                <li><strong>Effective Public Speaking</strong> - Toastmasters Training</li>
+                <li><strong>Writing for Impact</strong> - LinkedIn Learning</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">Articles</h2>
+            <div class="article-card">
+                <img src="https://i.imgur.com/what-is-esg.jpg" alt="What is ESG? Why It Matters for Modern Businesses">
+                <h4><a href="#">What is ESG? Why It Matters for Modern Businesses</a></h4>
+                <p>Type: SEO Article (700 words)</p>
+            </div>
+            <div class="article-card">
+                <img src="https://i.imgur.com/conserve-water.jpg" alt="5 Everyday Habits That Help Conserve Water at Home">
+                <h4><a href="#">5 Everyday Habits That Help Conserve Water at Home</a></h4>
+                <p>Type: Blog Post (500 words)</p>
+            </div>
+            <div class="article-card">
+                <img src="https://i.imgur.com/solar-energy.jpg" alt="How Solar Energy Can Transform Africa's Rural Communities">
+                <h4><a href="#">How Solar Energy Can Transform Africa's Rural Communities</a></h4>
+                <p>Type: Blog Post (600 words)</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">More Articles</h2>
+            <ul>
+                <li>
+                    <strong>Title:</strong> <a href="#">Reducing Automobile Emissons- A call for sustainable Transportation</a>
+                    <p><strong>Type:</strong> Article (700 words)</p>
+                </li>
+                <li>
+                    <strong>Title:</strong> <a href="#">Beyond compliance, How oil companies can lead charge in environmental responsibility</a>
+                    <p><strong>Type:</strong> Article (1000 words)</p>
+                </li>
+                <li>
+                    <strong>Title:</strong> <a href="#">Mangroves, Nigerians hidden weapon to achieving Net zero by 2060</a>
+                    <p><strong>Type:</strong> Article (1000 words)</p>
+                </li>
+                <li>
+                    <strong>Title:</strong> <a href="#">The role of oil companies in preventing mangrove loss</a>
+                    <p><strong>Type:</strong> Article (800 words)</p>
+                </li>
+                <li>
+                    <strong>Title:</strong> <a href="#">How a simple Habit changed my friends perspective on waste</a>
+                    <p><strong>Type:</strong> Blog post (500 word article)</p>
+                </li>
+                <li>
+                    <strong>Title:</strong> <a href="#">Rethinking Overconsumption: Why Less Isn't Less?</a>
+                    <p><strong>Type:</strong> Newsletter</p>
+                </li>
+                <li>
+                    <strong>Title:</strong> <a href="#">What “Green Growth” Really Means - And Why We’re Getting It Wrong.</a>
+                    <p><strong>Type:</strong> Newsletter</p>
+                </li>
+                <li>
+                    <strong>Title:</strong> <a href="#">Understanding Circular Economy for Beginners</a>
+                    <p><strong>Type:</strong> Short Guide (2 pages)</p>
+                </li>
+                <li>
+                    <strong>Title:</strong> <a href="#">Course Content: Introduction to Environmental Management Systems (EMS).</a>
+                    <p><strong>Type:</strong> Training Module</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">Contact</h2>
+            <address class="contact-info">
+                <strong>ADDRESS</strong>
+                <p>No 1 Yusuf Okeme Street, Kubwa Abuja Nigeria</p>
+                <strong>PHONE</strong>
+                <p>(234) 814 6208 329</p>
+                <strong>EMAIL</strong>
+                <p>lovekingston2@gmail.com</p>
+                <strong>LINKEDIN</strong>
+                <p><a href="https://www.linkedin.com/in/wereloo-kingston" target="_blank">https://www.linkedin.com/in/wereloo-kingston</a></p>
+            </address>
+        </div>
+
+    </div>
+
+</body>
+</html>
